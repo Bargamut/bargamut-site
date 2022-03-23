@@ -30,6 +30,24 @@ export const socials = readable([
 		}
 	},
 	{
+		id: 'tg',
+		img: {
+			src: '/assets/decor/logos/telegram.png',
+			alt: 'Telegram logo',
+		},
+		body: {
+			title: 'Telegram',
+			text: 'Здесь меня можно найти в Телеграме',
+			link: {
+				href: 'https://t.me/bargamut',
+				caption: 'Найти',
+			}
+		}
+	},
+	/**
+	 * @deprecated Via blocked in Russia :(
+	 
+	{
 		id: 'fb',
 		img: {
 			src: '/assets/decor/logos/fb.jpg',
@@ -74,4 +92,6 @@ export const socials = readable([
 			}
 		}
 	},
+
+	*/
 ]);
