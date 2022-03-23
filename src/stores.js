@@ -34,7 +34,7 @@ export const socials = readable([
 	{
 		id: 'tg',
 		img: {
-			src: '/assets/decor/logos/telegram.png',
+			src: '/assets/decor/logos/telegram.svg',
 			alt: 'Telegram logo',
 		},
 		body: {
