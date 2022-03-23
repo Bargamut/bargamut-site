@@ -1,6 +1,7 @@
 import { readable } from 'svelte/store';
 
 export const sitename = readable('Bargamut');
+
 export const navbarItems = readable([
 	{
 		isActive: true,
@@ -8,11 +9,12 @@ export const navbarItems = readable([
 		caption: 'Home',
 	},
 	{
-		isActive: false,
+		isActive: true,
 		link: 'https://ancientlores.com/',
-		caption: 'Ancient Lores',
+		caption: 'Ancient Lores | Сказания древности',
 	},
 ]);
+
 export const socials = readable([
 	{
 		id: 'vk',
