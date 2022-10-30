@@ -4,8 +4,8 @@
   "description": "Мой персональный сайт",
   "main": "index.js",
   "scripts": {
-		"test": "nyc mocha",
-		"coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test": "nyc mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
@@ -20,7 +20,7 @@
     "url": "https://bargamut.ru"
   },
   "private": true,
-	"license": "UNLICENSED",
+  "license": "UNLICENSED",
   "nyc": {
     "check-coverage": true,
     "per-file": true,
@@ -35,9 +35,9 @@
       "src/**/*.spec.js"
     ],
     "reporter": [
-			"html",
-			"text",
-			"lcov"
+      "html",
+      "text",
+      "lcov"
     ],
     "cache": true,
     "all": true
@@ -54,7 +54,9 @@
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
     "svelte": "^3.0.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "webpack": "5.74.0",
+    "webpack-cli": "4.10.0"
   },
   "dependencies": {
     "sirv-cli": "^0.4.4"
