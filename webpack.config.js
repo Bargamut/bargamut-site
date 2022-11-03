@@ -1,12 +1,14 @@
 const path = require('path');
 // const preprocess = require('svelte-preprocess');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const prod = process.env.mode ?? 'production';
 
 module.exports = {
 	entry: path.resolve(__dirname, 'src/main.js'),
 	output: {
+		clean: true,
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'public/build'),
 	},
@@ -59,6 +61,18 @@ module.exports = {
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: '[name].css',
+		}),
+		// TODO: Add Yandex.Counter (see public/index.html)
+		new HtmlWebpackPlugin({
+			favicon: './src/assets/decor/favicon.png',
+			title: 'Bargamut Site',
+			meta: {
+				'X-UA-Compatible': {
+					'http-equiv': 'X-UA-Compatible',
+					'content': "ie=edge",
+				},
+				description: "Личный сайт Павла 'Bargamut' Петрова",
+			},
 		}),
 	],
 };
