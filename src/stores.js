@@ -1,4 +1,6 @@
 import { readable } from 'svelte/store';
+import logoVK from './assets/decor/logos/vk.png';
+import logoTelegram from './assets/decor/logos/telegram.svg';
 
 export const sitename = readable('Bargamut');
 
@@ -11,7 +13,7 @@ export const navbarItems = readable([
 	{
 		isActive: true,
 		link: 'https://ancientlores.com/',
-		caption: 'Ancient Lores | Сказания древности',
+		caption: 'Сказания древности | Ancient Lores',
 	},
 ]);
 
@@ -19,7 +21,7 @@ export const socials = readable([
 	{
 		id: 'vk',
 		img: {
-			src: '/assets/decor/logos/vk.png',
+			src: logoVK,
 			alt: 'VK logo',
 		},
 		body: {
@@ -34,7 +36,7 @@ export const socials = readable([
 	{
 		id: 'tg',
 		img: {
-			src: '/assets/decor/logos/telegram.svg',
+			src: logoTelegram,
 			alt: 'Telegram logo',
 		},
 		body: {
@@ -47,12 +49,12 @@ export const socials = readable([
 		}
 	},
 	/**
-	 * @deprecated Via blocked in Russia :(
+	 * @deprecated Blocked in Russia :(
 	 
 	{
 		id: 'fb',
 		img: {
-			src: '/assets/decor/logos/fb.jpg',
+			src: logoFB,
 			alt: 'Facebook logo',
 		},
 		body: {

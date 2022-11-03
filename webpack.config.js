@@ -7,6 +7,7 @@ const prod = process.env.mode ?? 'production';
 module.exports = {
 	entry: path.resolve(__dirname, 'src/main.js'),
 	output: {
+		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'public/build'),
 	},
 
@@ -49,6 +50,10 @@ module.exports = {
 				],
 				sideEffects: true,
 			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: 'asset/resource',
+			}
 		],
 	},
 	plugins: [
