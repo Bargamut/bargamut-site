@@ -1,10 +1,11 @@
-import { readable } from 'svelte/store';
-import logoVK from './assets/decor/logos/vk.png';
-import logoTelegram from './assets/decor/logos/telegram.svg';
+import logoVK from "./assets/decor/logos/vk.png";
+import logoTelegram from "./assets/decor/logos/telegram.svg";
 
-export const sitename = readable('Bargamut');
+/** @readable */
+export const sitename = 'Bargamut';
 
-export const navbarItems = readable([
+/** @readable */
+export const navbarItems = [
 	{
 		isActive: true,
 		link: '/',
@@ -15,9 +16,10 @@ export const navbarItems = readable([
 		link: 'https://ancientlores.com/',
 		caption: 'Сказания древности | Ancient Lores',
 	},
-]);
+];
 
-export const socials = readable([
+/** @readable */
+export const socials = [
 	{
 		id: 'vk',
 		img: {
@@ -98,4 +100,4 @@ export const socials = readable([
 	},
 
 	*/
-]);
+];

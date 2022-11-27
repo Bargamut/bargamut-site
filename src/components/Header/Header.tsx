@@ -1,12 +1,12 @@
-import React, { VFC } from "react";
-// import Navbar from "./Navbar.svelte";
-// import styles from "./styles.css";
+import React, { FC } from "react";
+import { NavBar } from "../Navbar/Navbar";
+import "./styles.css";
 
 /** Header component */
-export const Header:VFC = () => (
-	<header class="bg-dark-overrided">
-		<section class="container">
-			{/* <Navbar /> */}
+export const Header: FC = () => (
+	<header className="bg-dark-overrided">
+		<section className="container">
+			<NavBar />
 		</section>
 	</header>
 );

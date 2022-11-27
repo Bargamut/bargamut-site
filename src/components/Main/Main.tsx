@@ -1,15 +1,16 @@
-import React, { VFC } from "react";
+import React, { FC } from "react";
+import { ICard } from "../../types/cardTypes";
 // import { socials } from "../stores.js";
 import { SocialCard } from "../SocialCard/SocialCard";
-// import styles from "./styles.css";
 
-export const Main: VFC = () => {
+/** Main component of application */
+export const Main: FC = () => {
 	// const socials = useSelector(socialsStore);
-	const socials: Record<string, unknown>[] = [];
+	const socials: ICard[] = [];
 
 	return (
-		<main class="container">
-			<section class="card-deck">
+		<main className="container">
+			<section className="card-deck">
 				{socials.map((socialItem) => (
 					<SocialCard {...socialItem} />
 				))}

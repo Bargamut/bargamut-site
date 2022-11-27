@@ -1,37 +1,37 @@
-import React, { VFC, useState } from "react";
+import React, { FC, useState } from "react";
+import { TNavigationItem } from "../../types/navigationTypes";
 // import { sitename, navbarItems } from "../stores.js";
-// import { fade } from "svelte/transition";
 import { NavItem } from "../NavItem/NavItem";
 
 /** Navigation bar for application */
-export const NavBar: VFC = () => {
+export const NavBar: FC = () => {
 	// const sitename = useSelector(siteStore);
 	// const navbarItems = useSelector(navbarStore);
 	const sitename = 'use siteStore';
-	const navbarItems: Record<string, unknown>[] = [];
+	const navbarItems: TNavigationItem[] = [];
 
 	const [isNavbarVisible, setNavbarVisibility] = useState(false);;
 
 	const handleClickMenuToggler = () => setNavbarVisibility(!isNavbarVisible);
 
 	return (
-		<nav class="navbar navbar-dark">
-			<a class="navbar-brand" href="/">{sitename}</a>
+		<nav className="navbar navbar-dark">
+			<a className="navbar-brand" href="/">{sitename}</a>
 			
-			<button class="navbar-toggler" type="button"
+			<button className="navbar-toggler" type="button"
 				data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent"
-				aria-expanded="{isNavbarVisible}"
+				aria-expanded={isNavbarVisible}
 				aria-label="Toggle navigation"
 				onClick={handleClickMenuToggler}
 			>
-				<span class="navbar-toggler-icon"></span>
+				<span className="navbar-toggler-icon"></span>
 			</button>
 			
 			{isNavbarVisible && (
-				<div class="collapse navbar-collapse show" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
+				<div className="collapse navbar-collapse show" id="navbarSupportedContent">
+					<ul className="navbar-nav mr-auto">
 						{navbarItems.map((item) => (
 							<NavItem {...item} />
 						))}

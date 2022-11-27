@@ -1,25 +1,24 @@
 import React, { FC } from 'react';
+import { ICard } from '../../types/cardTypes';
 
-/** Social card for appliaction */
-export const SocialCard: FC = (props) => {
-	const {
-		id,
-		img,
-		body,
-	} = props;
+type TProps = ICard;
+
+/** Social card for application */
+export const SocialCard: FC<TProps> = (props) => {
+	const { id, img, body } = props;
 
 	return (
-		<section class={`card ${id} bg-transparent text-light border-0`}>
+		<section className={`card ${id} bg-transparent text-light border-0`}>
 			<picture>
-				<img src={img.src} alt={img.alt} class="card-img" loading="lazy" />
+				<img src={img.src} alt={img.alt} className="card-img" loading="lazy" />
 			</picture>
 
-			<div class="card-body">
-				<h5 class="card-title">{body.title}</h5>
+			<div className="card-body">
+				<h5 className="card-title">{body.title}</h5>
 
-				<p class="card-text">{body.text}</p>
+				<p className="card-text">{body.text}</p>
 				
-				<a href={body.link.href} class="btn btn-block btn-light">{body.link.caption}</a>
+				<a href={body.link.href} className="btn btn-block btn-light">{body.link.caption}</a>
 			</div>
 		</section>
 	);
