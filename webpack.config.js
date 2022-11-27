@@ -3,10 +3,17 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const prod = process.env.mode ?? 'production';
+const isProduction = process.env.mode === 'production';
 
 module.exports = {
+	target: 'web',
+	devServer: {
+		static: './public/build',
+		hot: true,
+	},
+	devtool: 'inline-source-map',
 	entry: path.resolve(__dirname, 'src/main.js'),
+	mode: process.env.mode,
 	output: {
 		clean: true,
 		filename: 'bundle.js',
@@ -29,10 +36,10 @@ module.exports = {
 					loader: 'svelte-loader',
 					options: {
 						compilerOptions: {
-							dev: !prod,
+							dev: !isProduction,
 						},
-						emitCss: prod,
-						hotReload: !prod,
+						emitCss: isProduction,
+						hotReload: !isProduction,
 						// preprocess: preprocess({
 						// 	postcss: true,
 						// }),
@@ -65,7 +72,7 @@ module.exports = {
 		// TODO: Add Yandex.Counter (see public/index.html)
 		new HtmlWebpackPlugin({
 			favicon: './src/assets/decor/favicon.png',
-			title: 'Bargamut Site',
+			title: `${!isProduction ? '[ Development ] ' : ''}Bargamut Site`,
 			meta: {
 				'X-UA-Compatible': {
 					'http-equiv': 'X-UA-Compatible',
