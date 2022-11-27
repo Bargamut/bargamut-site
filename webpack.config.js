@@ -11,16 +11,21 @@ module.exports = {
 		hot: true,
 	},
 	devtool: 'inline-source-map',
-	entry: path.resolve(__dirname, 'src/main.js'),
+	entry: path.resolve(__dirname, 'src', 'main.tsx'),
 	mode: process.env.mode,
 	output: {
 		clean: true,
 		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'public/build'),
+		path: path.resolve(__dirname, 'public', 'build'),
 	},
 
 	module: {
 		rules: [
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: '/node_modules/',
+			},
 			{
 				test: /\.(css)$/,
 				use: [{ loader: MiniCssExtractPlugin.loader, options: {} }, 'css-loader' ],
@@ -31,6 +36,9 @@ module.exports = {
 				type: 'asset/resource',
 			}
 		],
+	},
+	resolve: {
+		extensions: [ '.js', '.ts', '.tsx' ],
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
