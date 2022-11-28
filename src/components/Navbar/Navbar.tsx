@@ -1,14 +1,11 @@
 import React, { FC, useState } from "react";
 import { TNavigationItem } from "../../types/navigationTypes";
-// import { sitename, navbarItems } from "../stores.js";
 import { NavItem } from "../NavItem/NavItem";
 
 /** Navigation bar for application */
 export const NavBar: FC = () => {
-	// const sitename = useSelector(siteStore);
-	// const navbarItems = useSelector(navbarStore);
-	const sitename = 'use siteStore';
-	const navbarItems: TNavigationItem[] = [];
+	const sitename = 'commonContent.sitename'; // useSelector(commonContentStore);
+	const navbarItems: TNavigationItem[] = []; // useSelector(navigationStore);
 
 	const [isNavbarVisible, setNavbarVisibility] = useState(false);;
 

@@ -2,10 +2,13 @@ import React, { FC } from "react";
 import "./styles.css";
 
 /** Footer component */
-export const Footer: FC = () => (
+export const Footer: FC = () => {
+	const footerText = 'commonContent.footer'; // useSelector(commonContentStore);
+	
+	return (
 	<footer className="bg-dark-overrided">
 		<section className="container text-muted">
-			&copy; 2020 Paul "Bargamut" Petrov. All rights reserved.
+			{footerText}
 		</section>
 	</footer>
-);
+);};
