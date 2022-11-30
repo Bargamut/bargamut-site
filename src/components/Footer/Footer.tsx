@@ -9,6 +9,9 @@ export const Footer: FC = () => {
 	<footer className="bg-dark-overrided">
 		<section className="container text-muted">
 			{footerText}
+
+			// TODO: Add Codewars badge https://www.codewars.com/users/bargamut/badges/micro
+			<img src="https://www.codewars.com/users/bargamut/badges/micro" />
 		</section>
 	</footer>
 );};
