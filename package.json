@@ -4,8 +4,9 @@
   "description": "Мой персональный сайт",
   "main": "main.tsx",
   "scripts": {
-    "test": "nyc mocha",
+    "test": "npm run eslint && nyc mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
+		"eslint": "eslint --ext .js src/service",
     "build": "webpack",
     "start": "webpack serve --mode=development"
   },
@@ -50,6 +51,7 @@
     "css-loader": "6.7.1",
     "html-webpack-plugin": "5.5.0",
     "mini-css-extract-plugin": "2.6.1",
+    "eslint": "8.26.0",
     "mocha": "^7.1.1",
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^15.0.0",
