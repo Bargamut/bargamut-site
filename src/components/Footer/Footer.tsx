@@ -10,7 +10,6 @@ export const Footer: FC = () => {
 		<section className="container text-muted">
 			{footerText}
 
-			// TODO: Add Codewars badge https://www.codewars.com/users/bargamut/badges/micro
 			<img src="https://www.codewars.com/users/bargamut/badges/micro" />
 		</section>
 	</footer>
