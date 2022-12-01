@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { ICard } from "../../types/cardTypes";
-// import { socials } from "../stores.js";
 import { SocialCard } from "../SocialCard/SocialCard";
 
 /** Main component of application */

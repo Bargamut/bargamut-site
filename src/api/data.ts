@@ -1,24 +1,33 @@
+// TODO: Put it into DB (Mongo / PostgrSQL + GQL)
+
 import logoVK from "./assets/decor/logos/vk.png";
 import logoTelegram from "./assets/decor/logos/telegram.svg";
+import { TDictionaryItem } from "../types/baseTypes";
 
-/** @readable */
-export const sitename = 'Bargamut';
+type TCommonContent = {
+	sitename: string;
+	footer: string;
+};
 
-/** @readable */
-export const navbarItems = [
+/** @readonly */
+export const commonContent: TCommonContent = {
+	sitename: 'Bargamut',
+	footer: '&copy; 2020 Paul "Bargamut" Petrov. All rights reserved.',
+};
+
+/** @readonly */
+export const navbarItems: TDictionaryItem[] = [
 	{
-		isActive: true,
-		link: '/',
-		caption: 'Home',
+		value: '/',
+		label: 'Home',
 	},
 	{
-		isActive: true,
-		link: 'https://ancientlores.com/',
-		caption: 'Сказания древности | Ancient Lores',
+		value: 'https://ancientlores.com/',
+		label: 'Сказания древности | Ancient Lores',
 	},
 ];
 
-/** @readable */
+/** @readonly */
 export const socials = [
 	{
 		id: 'vk',
