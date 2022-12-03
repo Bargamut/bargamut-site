@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import commenContentReducer from './commonContent';
-import navigationReducer from './navigation';
-import socialsReducer from './socials';
+import commenContentReducer from './slices/commonContent';
+import navigationReducer from './slices/navigation';
+import socialsReducer from './slices/socials';
 
 export const mainStore = configureStore({
 	reducer: {
