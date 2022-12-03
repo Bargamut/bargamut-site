@@ -4,7 +4,23 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const socialsSlice = createSlice({
 	name: 'socials',
-	initialState: {},
+	initialState: [
+		{
+			id: 'initial',
+			img: {
+				src: '#',
+				alt: 'Initial img',
+			},
+			body: {
+				title: 'Title',
+				text: 'Text',
+				link: {
+					href: '#',
+					caption: 'Link',
+				}
+			}
+		}
+	],
 	reducers: {
 		setContent(state, action) {
 			state = action.payload;

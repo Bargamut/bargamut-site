@@ -4,7 +4,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const commonContentSlice = createSlice({
 	name: 'commonContent',
-	initialState: {},
+	initialState: {
+		sitename: 'Sitename',
+		footer: 'Footer text',
+	},
 	reducers: {
 		commonContentLoaded(_state, action) {
 			return { ...action.payload }; // Yes, we can set just by equal because Immer. This is for example.
