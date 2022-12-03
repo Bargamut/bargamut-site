@@ -7,7 +7,7 @@ type TLink = {
 /** Card data */
 export interface ICard {
 	id: string,
-	img: HTMLImageElement,
+	img: Pick<HTMLImageElement, 'src' | 'alt'>,
 	body: {
 		title: string;
 		text: string;

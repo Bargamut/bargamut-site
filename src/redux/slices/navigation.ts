@@ -4,12 +4,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const navigationSlice = createSlice({
 	name: 'navigation',
-	initialState: [
-		{
-			value: '/',
-			label: 'Initial menu item',
-		}
-	],
+	initialState: {
+		menuItems: [
+			{
+				link: '/',
+				caption: 'Initial menu item',
+			},
+		],
+},
 	reducers: {
 		setContent(state, action) {
 			state = action.payload;

@@ -1,11 +1,13 @@
 import React, { FC, useState } from "react";
+import { useSelector } from 'react-redux';
+import { TMainStore } from "../../redux";
 import { TNavigationItem } from "../../types/navigationTypes";
 import { NavItem } from "../NavItem/NavItem";
 
 /** Navigation bar for application */
 export const NavBar: FC = () => {
-	const sitename = 'commonContent.sitename'; // useSelector(commonContentStore);
-	const navbarItems: TNavigationItem[] = []; // useSelector(navigationStore);
+	const sitename = useSelector((state: TMainStore) => state.commenContent.sitename);
+	const navbarItems: TNavigationItem[] = useSelector((state: TMainStore) => state.navigation.menuItems);
 
 	const [isNavbarVisible, setNavbarVisibility] = useState(false);;
 
