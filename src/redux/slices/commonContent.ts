@@ -10,7 +10,8 @@ const commonContentSlice = createSlice({
 	},
 	reducers: {
 		commonContentLoaded(_state, action) {
-			return { ...action.payload }; // Yes, we can set just by equal because Immer. This is for example.
+			// Yes, we can set just by equal because Immer. This is for example.
+			return { ...action.payload };
 		},
 	},
 });

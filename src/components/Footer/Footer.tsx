@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import { TMainStore } from "../../redux";
+import { selectFooterText } from "../../redux/selectors/commonContent";
 import "./styles.css";
 
 /** Footer component */
 export const Footer: FC = () => {
-	const footerText = useSelector((state: TMainStore) => state.commenContent.footer);
+	const footerText = useSelector(selectFooterText);
 	
 	return (
 		<footer className="bg-dark-overrided">

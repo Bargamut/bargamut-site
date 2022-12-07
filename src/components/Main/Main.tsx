@@ -1,12 +1,11 @@
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import { TMainStore } from "../../redux";
-import { ICard } from "../../types/cardTypes";
+import { selectSocialsItems } from "../../redux/selectors/socials";
 import { SocialCard } from "../SocialCard/SocialCard";
 
 /** Main component of application */
 export const Main: FC = () => {
-	const socials: ICard[] = useSelector((state: TMainStore) => state.socials.items);
+	const socials = useSelector(selectSocialsItems);
 
 	return (
 		<main className="container">
