@@ -1,25 +1,38 @@
-import { readable } from 'svelte/store';
+// TODO: Put it into DB (Mongo / PostgrSQL + GQL)
 
-export const sitename = readable('Bargamut');
+import logoVK from "../assets/decor/logos/vk.png";
+import logoTelegram from "../assets/decor/logos/telegram.svg";
+import { TDictionaryItem } from "../types/baseTypes";
 
-export const navbarItems = readable([
+type TCommonContent = {
+	sitename: string;
+	copyright: string;
+};
+
+/** @readonly */
+export const commonContent: TCommonContent = {
+	sitename: 'Bargamut',
+	copyright: `Paul "Bargamut" Petrov. All rights reserved.`,
+};
+
+/** @readonly */
+export const navbarItems: TDictionaryItem[] = [
 	{
-		isActive: true,
-		link: '/',
-		caption: 'Home',
+		value: '/',
+		label: 'Home',
 	},
 	{
-		isActive: true,
-		link: 'https://ancientlores.com/',
-		caption: 'Ancient Lores | Сказания древности',
+		value: 'https://ancientlores.com/',
+		label: 'Сказания древности | Ancient Lores',
 	},
-]);
+];
 
-export const socials = readable([
+/** @readonly */
+export const socials = [
 	{
 		id: 'vk',
 		img: {
-			src: '/assets/decor/logos/vk.png',
+			src: logoVK,
 			alt: 'VK logo',
 		},
 		body: {
@@ -34,7 +47,7 @@ export const socials = readable([
 	{
 		id: 'tg',
 		img: {
-			src: '/assets/decor/logos/telegram.svg',
+			src: logoTelegram,
 			alt: 'Telegram logo',
 		},
 		body: {
@@ -47,12 +60,12 @@ export const socials = readable([
 		}
 	},
 	/**
-	 * @deprecated Via blocked in Russia :(
+	 * @deprecated Blocked in Russia :(
 	 
 	{
 		id: 'fb',
 		img: {
-			src: '/assets/decor/logos/fb.jpg',
+			src: logoFB,
 			alt: 'Facebook logo',
 		},
 		body: {
@@ -96,4 +109,4 @@ export const socials = readable([
 	},
 
 	*/
-]);
+];
