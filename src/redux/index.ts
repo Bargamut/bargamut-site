@@ -14,3 +14,5 @@ export const mainStore = configureStore({
 
 /** Main store type */
 export type TMainStore = ReturnType<typeof mainStore.getState>;
+
+export type TMainStoreDispatch = typeof mainStore.dispatch;

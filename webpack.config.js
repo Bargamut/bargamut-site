@@ -47,14 +47,15 @@ module.exports = {
 		// TODO: Add Yandex.Counter (see public/index.html)
 		new HtmlWebpackPlugin({
 			favicon: './src/assets/decor/favicon.png',
+			template: './src/index.html',
 			title: `${!isProduction ? '[ Development ] ' : ''}Bargamut Site`,
-			meta: {
-				'X-UA-Compatible': {
-					'http-equiv': 'X-UA-Compatible',
-					'content': "ie=edge",
-				},
-				description: "Личный сайт Павла 'Bargamut' Петрова",
-			},
+			// meta: {
+			// 	'X-UA-Compatible': {
+			// 		'http-equiv': 'X-UA-Compatible',
+			// 		'content': "ie=edge",
+			// 	},
+			// 	description: "Личный сайт Павла 'Bargamut' Петрова",
+			// },
 		}),
 	],
 };

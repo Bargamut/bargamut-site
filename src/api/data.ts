@@ -1,18 +1,18 @@
 // TODO: Put it into DB (Mongo / PostgrSQL + GQL)
 
-import logoVK from "./assets/decor/logos/vk.png";
-import logoTelegram from "./assets/decor/logos/telegram.svg";
+import logoVK from "../assets/decor/logos/vk.png";
+import logoTelegram from "../assets/decor/logos/telegram.svg";
 import { TDictionaryItem } from "../types/baseTypes";
 
 type TCommonContent = {
 	sitename: string;
-	footer: string;
+	copyright: string;
 };
 
 /** @readonly */
 export const commonContent: TCommonContent = {
 	sitename: 'Bargamut',
-	footer: '&copy; 2020 Paul "Bargamut" Petrov. All rights reserved.',
+	copyright: `Paul "Bargamut" Petrov. All rights reserved.`,
 };
 
 /** @readonly */

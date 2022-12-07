@@ -3,8 +3,8 @@ import { TMainStore } from "../index";
 
 const selectStatePart = (state: TMainStore) => state.commonContent;
 
-/** Select footer text */
-export const selectFooterText = createSelector(selectStatePart, (state) => state.footer);
+/** Select copyright text */
+export const selectCopyrightText = createSelector(selectStatePart, (state) => state.copyright);
 
 /** Select sitename text */
 export const selectSitename = createSelector(selectStatePart, (state) => state.sitename);

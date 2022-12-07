@@ -1,15 +1,24 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
+import { TMainStoreDispatch } from "../../redux";
 import { selectSitename } from "../../redux/selectors/commonContent";
 import { selectNavigationMenuItems } from "../../redux/selectors/navigation";
+import { thunkFetchNavigationItems } from "../../redux/thunks/navigation";
 import { NavItem } from "../NavItem/NavItem";
 
 /** Navigation bar for application */
 export const NavBar: FC = () => {
+	const dispatch = useDispatch<TMainStoreDispatch>();
+
 	const sitename = useSelector(selectSitename);
 	const navbarItems = useSelector(selectNavigationMenuItems);
 
-	const [isNavbarVisible, setNavbarVisibility] = useState(false);;
+	const [isNavbarVisible, setNavbarVisibility] = useState(false);
+
+	useEffect(() => {
+		dispatch(thunkFetchNavigationItems());
+	}, []);
 
 	const handleClickMenuToggler = () => setNavbarVisibility(!isNavbarVisible);
 
