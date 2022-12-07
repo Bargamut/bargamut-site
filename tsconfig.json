@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"esModuleInterop": true,
+		"jsx": "react",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"noImplicitAny": true,
+		"outDir": "./public/build",
+		"sourceMap": true,
+		"target": "ES6",
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules/**/*"],
+}

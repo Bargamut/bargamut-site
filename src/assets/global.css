@@ -1,0 +1,24 @@
+:root {
+	--color-gray-middle: #444446;
+	--color-gray-dark: #222226;
+	--color-yellow-middle: #a98a40;
+}
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	color: #333;
+	background-color: var(--color-gray-dark);
+	margin: 0;
+	padding: 60px 0 0;
+	box-sizing: border-box;
+	/* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
+}
+
+.bg-dark-overrided {
+	background-color: var(--color-gray-middle);
+}
