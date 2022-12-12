@@ -1,27 +1,18 @@
-import { createStore, Reducer, Action } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import commonContentReducer from './slices/commonContent';
+import navigationReducer from './slices/navigation';
+import socialsReducer from './slices/socials';
 
-enum ECounterActions {
-	INCREMENTED = 'counter/incremented',
-};
-
-type TAction = Action<ECounterActions>;
-
-interface IAppState {
-	value: number;
-}
-
-const initialState: IAppState = {
-	value: 0,
-};
-
-const mainReducer: Reducer<IAppState, TAction> = (state = initialState, action) => {
-	switch (action.type) {
-		case ECounterActions.INCREMENTED:
-			return { value: state.value + 1 }
-	
-		default:
-			return state;
+/** Main store of the application */
+export const mainStore = configureStore({
+	reducer: {
+		commonContent: commonContentReducer,
+		navigation: navigationReducer,
+		socials: socialsReducer,
 	}
-};
+});
 
-const mainStore = createStore(mainReducer);
+/** Main store type */
+export type TMainStore = ReturnType<typeof mainStore.getState>;
+
+export type TMainStoreDispatch = typeof mainStore.dispatch;
