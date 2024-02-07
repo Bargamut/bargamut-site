@@ -22,8 +22,8 @@ export const navbarItems: TDictionaryItem[] = [
 		label: 'Home',
 	},
 	{
-		value: 'https://ancientlores.com/',
-		label: 'Сказания древности | Ancient Lores',
+		value: 'https://xplore.games/',
+		label: 'XP•LORE Games',
 	},
 ];
 
