@@ -1,6 +1,6 @@
 ### STAGE 1: Build ###
 
-FROM node:13.10.1-alpine as builder
+FROM node:20.11.0-alpine as builder
 
 LABEL maintainer="Paul Petrov (paul@bargamut.ru)"
 
@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 # Copy npm package files
 COPY package*.json ./
 
-RUN npm set progress=false && npm ci --silent
+RUN ping -c 1 bargamut.ru && npm set progress=false && npm ci --no-audit --omit=optional --silent
 
 # Copy app files to out container
 COPY . .
